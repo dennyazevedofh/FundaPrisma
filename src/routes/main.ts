@@ -9,10 +9,10 @@ mainRouter.get('/ping', (req, res) => {
 });
 
 mainRouter.post('/user', async (req, res) => {
-    const user = await createUser(
-            'John Doe',
-            'john.doe@exemple.com'
-        )
+    const user = await createUser({
+        name: 'John Doe',
+        email: 'john.doe@exemple.com'
+    });
 
     res.json(user)
 })
